@@ -3,15 +3,9 @@
 # @return {Integer[]}
 def two_sum(nums, target)
   map = {}
-  ans = nil
   nums.each_with_index do |num, i|
-    if map.key? num
-      ans = [map[num], i]
-      break
-    end
+    return [map[num], i] if map.has_key? num
 
     map[target - num] = i
   end
-
-  ans
 end
