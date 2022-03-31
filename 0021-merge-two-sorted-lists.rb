@@ -20,17 +20,15 @@ def merge_two_lists(list1, list2)
     elsif list2.nil?
       temp_node.next = list1
       break
+    elsif list1.val < list2.val
+      temp_node.next = list1
+      list1 = list1.next
     else
-      if list1.val < list2.val
-        temp_node.next = list1
-        list1 = list1.next
-      else
-        temp_node.next = list2
-        list2 = list2.next
-      end
-      temp_node = temp_node.next
+      temp_node.next = list2
+      list2 = list2.next
     end
 
+    temp_node = temp_node.next
   end
 
   first_node.next
