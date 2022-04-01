@@ -1,5 +1,5 @@
 # @param {String} sentence
 # @return {Boolean}
 def check_if_pangram(sentence)
-  sentence.uniq.size == 26
+  sentence.chars.uniq.size == 26
 end
