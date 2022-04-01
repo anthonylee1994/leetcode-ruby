@@ -1,8 +1,8 @@
 # @param {Integer[]} nums
 # @return {Integer}
 def remove_duplicates(nums)
-  return nums.length if nums.length < 2
+  return if nums.length.zero?
 
-  (nums.length - 1).downto(0) { |index| nums.delete_at(index) if nums.index(nums[index]) != index }
-  nums.length
+  nums.length.times { |i| nums[i] = nil if nums[i] == nums[i + 1] }
+  nums.delete(nil)
 end
